@@ -1,0 +1,37 @@
+# Copyright (c) 2026 Mitsubishi Electric Research Laboratories (MERL)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Python cache
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Model / checkpoint files
+*.ckpt
+*.pth
+*.pt
+!checkpoints/SIPS.pt
+!checkpoints/Conv-TasNet.pt
+!checkpoints/flexio_avg.ckpt
+
+# Config / data files
+*.yaml
+!.pre-commit-config.yaml
+!.github/workflows/*.yaml
+!checkpoints/flexio_hparams.yaml
+*.json
+!checkpoints/SIPS_config.json
+
+# License files (tracked)
+!/LICENSES/
+
+# Audio files
+*.wav
+
+# VSCode settings
+.vscode/
+
+# Logs and outputs
+.jobs/
+out/
+runs/

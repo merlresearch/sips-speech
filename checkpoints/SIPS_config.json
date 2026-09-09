@@ -1,0 +1,71 @@
+{
+  "dataset_kwargs": {
+    "class_name": "training.dataset.Dataset",
+    "path": null,
+    "num_frames": 256
+  },
+  "audio_encoder_kwargs": {
+    "class_name": "training.encoders.SpectrogramEncoder",
+    "spec_exp": 0.5,
+    "spec_factor": 0.15,
+    "raw_std": 0.08
+  },
+  "total_nwav": 4194304,
+  "batch_size": 16,
+  "model_kwargs": {
+    "spec_channels": 2,
+    "t_eps": 0.0,
+    "T": 1.0,
+    "logvar_channels": 128,
+    "c": 0.5,
+    "a": 0.1,
+    "channel_mult": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "attn_resolutions": [
+      16
+    ]
+  },
+  "loss_kwargs": {
+    "class_name": "training.training_loop.InterpolantLoss",
+    "eps": 1e-08,
+    "lambda_name": "one",
+    "c": 0.5,
+    "t_eps": 0.0,
+    "T": 1.0,
+    "estimates": [
+      "eta_z_hat"
+    ],
+    "est_slices": {
+      "eta_z_hat": [
+        0,
+        2
+      ]
+    },
+    "est_weights": {
+      "eta_z_hat": 1.0
+    }
+  },
+  "lr_kwargs": {
+    "func_name": "training.training_loop.learning_rate_schedule",
+    "ref_lr": 0.0025,
+    "ref_batches": 30000.0,
+    "rampup_mwav": 1
+  },
+  "batch_gpu": null,
+  "loss_scaling": 1.0,
+  "cudnn_benchmark": true,
+  "status_nwav": null,
+  "snapshot_nwav": 1048576,
+  "checkpoint_nwav": 2097152,
+  "seed": 0,
+  "noval": true,
+  "num_files": null,
+  "verbose": false
+}

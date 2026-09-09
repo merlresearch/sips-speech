@@ -1,0 +1,83 @@
+# Copyright (c) 2026 Mitsubishi Electric Research Laboratories (MERL)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+encoder_name: stft
+encoder_conf:
+  fft_size: 512
+  window_length: 512
+  hop_length: 256
+  window_type: sqrt_hann
+  normalize: null
+decoder_name: stft
+decoder_conf:
+  fft_size: 512
+  window_length: 512
+  hop_length: 256
+  window_type: sqrt_hann
+  normalize: null
+model_name: mctuss
+model_conf:
+  ref_channel: 0
+  cross_prompt_module_name: coatt
+  prompts:
+  - speech
+  nblocks_cross_prompt_module: 4
+  conf_cross_prompt_module:
+    emb_dim: 96
+    num_groups: 8
+    tf_order: ft
+    n_heads: 4
+    flash_attention: false
+    attention_dim: 128
+    freq_ffn_config:
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 384
+        conv1d_kernel: 4
+        conv1d_shift: 1
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 384
+        conv1d_kernel: 4
+        conv1d_shift: 1
+    frame_ffn_config:
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 384
+        conv1d_kernel: 1
+        conv1d_shift: 1
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 384
+        conv1d_kernel: 1
+        conv1d_shift: 1
+  nblocks_cond_tse_module: 2
+  conf_cond_tse_module:
+    emb_dim: 96
+    num_groups: 8
+    tf_order: ft
+    n_heads: 4
+    flash_attention: false
+    attention_dim: 96
+    freq_ffn_config:
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 256
+        conv1d_kernel: 4
+        conv1d_shift: 1
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 256
+        conv1d_kernel: 4
+        conv1d_shift: 1
+    frame_ffn_config:
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 256
+        conv1d_kernel: 4
+        conv1d_shift: 1
+    - ffn_type: swiglu_conv1d
+      conf:
+        dim_inner: 256
+        conv1d_kernel: 4
+        conv1d_shift: 1

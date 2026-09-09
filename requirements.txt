@@ -1,0 +1,18 @@
+# Copyright (c) 2026 Mitsubishi Electric Research Laboratories (MERL)
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+einops
+HyperPyYAML
+huggingface_hub
+numpy
+packaging
+psutil
+PyYAML
+requests
+rotary-embedding-torch
+scipy
+soundfile
+tensorboard
+torch
+tqdm
+triton

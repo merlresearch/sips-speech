@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: sips-speech
+Source: https://github.com/merlresearch/sips-speech
+
+Files: checkpoints/Conv-TasNet.pt
+ checkpoints/SIPS.pt
+ checkpoints/flexio_avg.ckpt
+Copyright: 2026 Mitsubishi Electric Research Laboratories (MERL)
+License: AGPL-3.0-or-later

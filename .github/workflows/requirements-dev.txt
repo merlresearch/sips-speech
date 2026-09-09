@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+pre-commit
